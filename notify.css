@@ -1,0 +1,269 @@
+[data-position="left"] {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 350px;
+    }
+
+    [data-position="right"] {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      width: 350px;
+    }
+
+    .notify-success {
+      background-color: #4caf50;
+      border-radius: 2px;
+    }
+
+    .notify-info {
+    background-color: #03a9f4;
+    border-radius: 2px;
+    }
+
+    .notify-warning {
+      background-color: #ff5722;
+      border-radius: 2px;
+    }
+
+    .notify-danger {
+      background-color: #f44336;
+      border-radius: 2px;
+    }
+
+    .notify {
+      padding: 5px;
+      margin: 5px;
+      text-align: center;
+      opacity: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 100;
+
+    }
+
+    [data-show="false"] {
+     z-index: -1;
+     transition-duration: 0.5s;
+     }
+
+    [data-show="true"] {
+     z-index: 10000;}
+
+    .notify * {
+        color: rgba(255,255,255, 0.84);
+        font-size: 1.3em;
+    }
+
+   [data-position="left"] .notify-open {
+      opacity: 1;
+      animation: .35s appearsLeft;
+    }
+   [data-position="left"] .notify-close {
+      animation: .35s appearsLeftEnd;
+    }
+    [data-position="right"] .notify-open {
+      opacity: 1;
+      animation: .35s appearsRight;
+    }
+   [data-position="right"] .notify-close {
+      animation: .35s appearsRightEnd;
+    }
+
+
+
+
+
+
+
+
+
+    @keyframes appearsRight {
+      from {
+          -webkit-transform: translateX(100%);
+             -moz-transform: translateX(100%);
+              -ms-transform: translateX(100%);
+               -o-transform: translateX(100%);
+                  transform: translateX(100%);
+                  opacity: 0;
+      }
+      to {
+          -webkit-transform: translateX(0%);
+             -moz-transform: translateX(0%);
+              -ms-transform: translateX(0%);
+               -o-transform: translateX(0%);
+                  transform: translateX(0%);
+                  opacity: 1;
+      }
+    }
+
+    @keyframes appearsRightEnd {
+      from {
+          -webkit-transform: translateX(0%);
+             -moz-transform: translateX(0%);
+              -ms-transform: translateX(0%);
+               -o-transform: translateX(0%);
+                  transform: translateX(0%);
+                  opacity: 1;
+      }
+      to {
+          -webkit-transform: translateX(100%);
+             -moz-transform: translateX(100%);
+              -ms-transform: translateX(100%);
+               -o-transform: translateX(100%);
+                  transform: translateX(100%);
+                  opacity: 0;
+      }
+    }
+
+    @keyframes appearsLeft {
+      from {
+          -webkit-transform: translateX(-100%);
+             -moz-transform: translateX(-100%);
+              -ms-transform: translateX(-100%);
+               -o-transform: translateX(-100%);
+                  transform: translateX(-100%);
+                  opacity: 0;
+      }
+      to {
+          -webkit-transform: translateX(0%);
+             -moz-transform: translateX(0%);
+              -ms-transform: translateX(0%);
+               -o-transform: translateX(0%);
+                  transform: translateX(0%);
+                  opacity: 1;
+      }
+    }
+
+    @keyframes appearsLeftEnd {
+      from {
+          -webkit-transform: translateX(0%);
+             -moz-transform: translateX(0%);
+              -ms-transform: translateX(0%);
+               -o-transform: translateX(0%);
+                  transform: translateX(0%);
+                  opacity: 1;
+      }
+      to {
+          -webkit-transform: translateX(-100%);
+             -moz-transform: translateX(-100%);
+              -ms-transform: translateX(-100%);
+               -o-transform: translateX(-100%);
+                  transform: translateX(-100%);
+                  opacity: 0;
+      }
+    }
+
+    @keyframes appearsTop {
+      from {
+          -webkit-transform: translateY(-100%);
+             -moz-transform: translateY(-100%);
+              -ms-transform: translateY(-100%);
+               -o-transform: translateY(-100%);
+                  transform: translateY(-100%);
+                  opacity: 0;
+      }
+      to {
+          -webkit-transform: translateY(0%);
+             -moz-transform: translateY(0%);
+              -ms-transform: translateY(0%);
+               -o-transform: translateY(0%);
+                  transform: translateY(0%);
+                  opacity: 1;
+      }
+    }
+
+    @keyframes appearsTopEnd {
+      from {
+          -webkit-transform: translateY(0%);
+             -moz-transform: translateY(0%);
+              -ms-transform: translateY(0%);
+               -o-transform: translateY(0%);
+                  transform: translateY(0%);
+                  opacity: 1;
+      }
+      to {
+          -webkit-transform: translateY(-100%);
+             -moz-transform: translateY(-100%);
+              -ms-transform: translateY(-100%);
+               -o-transform: translateY(-100%);
+                  transform: translateY(-100%);
+                  opacity: 0;
+      }
+    }
+
+    @keyframes appearsBottom {
+      from {
+          -webkit-transform: translateY(100%);
+             -moz-transform: translateY(100%);
+              -ms-transform: translateY(100%);
+               -o-transform: translateY(100%);
+                  transform: translateY(100%);
+                  opacity: 0;
+      }
+      to {
+          -webkit-transform: translateY(0%);
+             -moz-transform: translateY(0%);
+              -ms-transform: translateY(0%);
+               -o-transform: translateY(0%);
+                  transform: translateY(0%);
+                  opacity: 1;
+      }
+    }
+
+    @keyframes appearsBottomEnd {
+      from {
+          -webkit-transform: translateY(0%);
+             -moz-transform: translateY(0%);
+              -ms-transform: translateY(0%);
+               -o-transform: translateY(0%);
+                  transform: translateY(0%);
+                  opacity: 1;
+      }
+      to {
+          -webkit-transform: translateY(100%);
+             -moz-transform: translateY(100%);
+              -ms-transform: translateY(100%);
+               -o-transform: translateY(100%);
+                  transform: translateY(100%);
+                  opacity: 0;
+      }
+    }
+
+    @keyframes appearsCenter {
+      from {
+            -webkit-transform: translateY(-100%);
+             -moz-transform: translateY(-100%);
+              -ms-transform: translateY(-100%);
+               -o-transform: translateY(-100%);
+                  transform: translateY(-100%);
+                  opacity: 0;
+      }
+      to {
+                 -webkit-transform: translateY(500%);
+             -moz-transform: translateY(500%);
+              -ms-transform: translateY(500%);
+               -o-transform: translateY(500%);
+                  transform: translateY(500%);
+                  opacity: 1;
+      }
+    }
+
+    @keyframes appearsCenterEnd {
+      from {
+                  -webkit-transform: translateY(500%);
+             -moz-transform: translateY(500%);
+              -ms-transform: translateY(500%);
+               -o-transform: translateY(500%);
+                  transform: translateY(500%);
+                  opacity: 1;
+      }
+      to {
+                  -webkit-transform: translateY(-100%);
+             -moz-transform: translateY(-100%);
+              -ms-transform: translateY(-100%);
+               -o-transform: translateY(-100%);
+                  transform: translateY(-100%);
+                  opacity: 0;
+      }
+    }
