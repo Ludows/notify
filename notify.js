@@ -16,7 +16,7 @@ else {
 
   'use strict';
 
-  var Notify = {};
+var Notify = {};
 var supports = !!document.querySelector && !!root.addEventListener; // Feature test
 var wrapper_notif;
 var wrapper_notif_arr;
@@ -63,8 +63,8 @@ function extend( a, b ) {
 Notify.init = function(options) {
 
   if (arguments[0] && typeof arguments[0] == "object"){
-    this.options = extend( {}, this.options)
-    extend( this.options, options)    
+    this.options = extend( defaults, arguments[0])
+    // extend( this.options, options)    
   } else {
     this.options = defaults;
   }
@@ -201,22 +201,6 @@ function get_support_remove(element) {
   }
 }
 
-
-Notify.event = function() {
-
-  function getEvent(event, element, func) {
-    if (element.addEventListener) {
-      element.addEventListener(event, func, false);
-    } else if (element.attachEvent) {
-      element.attachEvent("on" + event, func);
-    } else {
-      element['on' + event] = func;
-    }
-  }
-
-
-// getEvent('load', window, onloadLoader);
-}
 
 return Notify;
 
