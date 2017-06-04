@@ -63,8 +63,10 @@ function extend( a, b ) {
 Notify.init = function(options) {
 
   if (arguments[0] && typeof arguments[0] == "object"){
-    this.options = extend( defaults, arguments[0])
-    // extend( this.options, options)    
+    this.options = extend( {}, defaults)
+    extend( this.options, options)
+
+    // console.log('opts Notify', arguments[0])
   } else {
     this.options = defaults;
   }
@@ -146,7 +148,7 @@ the_tpl_message.appendChild(the_tpl_message_content);
 // Création d'un array pour stocker chaque notifications que je redistribue dans le DOM avec la boucle forEach
 the_tpl_message_arr = new Array();
 the_tpl_message_arr.push(the_tpl_message);
-console.log('tpl-message-arr', the_tpl_message_arr);
+// console.log('tpl-message-arr', the_tpl_message_arr);
 // On init le timer de l'object options.timerMessage
 
 the_tpl_message_arr.forEach(function(element, index){
@@ -181,7 +183,7 @@ get_support_remove(element);
 }, the_time + 500)
 })
 
-console.log('the notif arr', the_notif_arr);
+// console.log('the notif arr', the_notif_arr);
 }
 
 function _theMessage() {
