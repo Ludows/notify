@@ -173,15 +173,14 @@ Notify.init = function(options) {
       the_notif = document.querySelectorAll(the_class_message);
       the_notif_arr = Array.prototype.slice.call(the_notif);
 
-      function onUpdate() {
-        var test = document.querySelectorAll(the_class_message).length;
-        console.log('count notify elm', test);
-      }
-      
-      
       the_notif_arr.forEach(function(element, index) {
         if (the_close_btn_opt != false ) {
-
+          
+          setTimeout(function(){
+            // element.parentNode.removeChild(element);
+            onUpdate();
+            // the_notif_arr.splice(index, 1);
+          }, the_time + 500)
         }
         else {
           setTimeout(function(){
@@ -214,6 +213,17 @@ Notify.init = function(options) {
     }    
   }
 
+  function onUpdate() {
+        var test = document.querySelectorAll(the_class_message).length;
+        console.log('count notify elm', test);
+        if (test === 0) {
+          wrapper_notif.setAttribute('data-show', false);
+        }
+        else {
+          wrapper_notif.setAttribute('data-show', true);
+        }
+  }
+
   function _setActions() {
     if (btn_callback != false && the_close_btn_opt != false) {
       var the_response;
@@ -240,6 +250,7 @@ Notify.init = function(options) {
         the_act.className = "notify notify-close "+ the_class_type +" ";
         setTimeout(function(){
           get_support_remove(the_act);
+          onUpdate();
         }, 500)
         the_response = true;
         return the_response;
@@ -252,6 +263,7 @@ Notify.init = function(options) {
         the_act.className = "notify notify-close "+ the_class_type +" ";
         setTimeout(function(){
           get_support_remove(the_act);
+          onUpdate();
         }, 500)
 
         the_response = false;
@@ -331,6 +343,7 @@ function get_touch_support(elm) {
             evt.target.parentNode.className = "notify notify-close "+ the_class_type +" ";
             setTimeout(function(){
               get_support_remove(evt.target.parentNode);
+              onUpdate();
             },500)
           }
         }
